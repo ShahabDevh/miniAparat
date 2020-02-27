@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import * as Style from "./Styled";
+
 /* current page o ke zori sefresh gozashtam 1 dota safe 1 ijad kard
    to search okeye vali nemitonam jaye digei azash estefade konam mirize beham
    mizaramesh faghat vase search dige karish be zehnam nemirese bokonam
@@ -14,13 +16,13 @@ const SearchResultPagination = ({
   query
 }) => {
   return (
-    <ul className="paginate">
+    <Style.Paginate>
       {paginate.pagingForward ? (
         <Link
           to={`/search?q=${query}&page=${Number(currentPage) + 1}`}
           onClick={() => increment()}
         >
-          <li className="list-item ">
+          <li>
             <span>&laquo;</span>Next
           </li>
         </Link>
@@ -28,7 +30,7 @@ const SearchResultPagination = ({
         ""
       )}
 
-      <li className="list-item">{Number(currentPage)}</li>
+      <li> {Number(currentPage)}</li>
 
       {paginate.pagingBack === null ? (
         ""
@@ -37,12 +39,12 @@ const SearchResultPagination = ({
           to={`/search?q=${query}&page=${Number(currentPage) - 1}`}
           onClick={() => decrement()}
         >
-          <li className="list-item ">
+          <li>
             Prev<span>&raquo;</span>
           </li>
         </Link>
       )}
-    </ul>
+    </Style.Paginate>
   );
 };
 

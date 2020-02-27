@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import * as Style from "./Styled";
+
 const CategoryPagination = ({
   paginate,
   currentPage,
@@ -10,13 +12,13 @@ const CategoryPagination = ({
   name
 }) => {
   return (
-    <ul className="paginate">
+    <Style.Paginate>
       {paginate.pagingForward ? (
         <Link
           to={`/category/${name}/${category_id}`}
           onClick={() => increment()}
         >
-          <li className="list-item ">
+          <li>
             <span>&laquo;</span>Next
           </li>
         </Link>
@@ -24,7 +26,7 @@ const CategoryPagination = ({
         ""
       )}
 
-      <li className="list-item">{Number(currentPage)}</li>
+      <li>{Number(currentPage)}</li>
 
       {paginate.pagingBack === "" ? (
         ""
@@ -33,12 +35,12 @@ const CategoryPagination = ({
           to={`/category/${name}/${category_id}`}
           onClick={() => decrement()}
         >
-          <li className="list-item ">
+          <li>
             Prev<span>&raquo;</span>
           </li>
         </Link>
       )}
-    </ul>
+    </Style.Paginate>
   );
 };
 
