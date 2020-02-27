@@ -1,39 +1,37 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import * as S from "./Styled";
+
 import CalculateTime from "./CalculateTime";
 
 const Videos = ({ videos }) => {
   if (videos) {
     return videos.map(item => {
       return (
-        <div key={item.id} className="video">
+        <S.Video key={item.id} bg={item.small_poster}>
           <Link to={`/v/${item.uid}`}>
             <div className="tooltip-container">
-              <div className="tooltip">
+              <div>
                 <CalculateTime time={item.duration} />
               </div>
-              <video
-                className="preview"
-                style={{ backgroundImage: `url(${item.small_poster})` }}
-              ></video>
+              <video />
             </div>
           </Link>
           <div className="video-info">
-            <p className="videos-title">{item.title}</p>
-            <p className="video-name">{item.sender_name}</p>
+            <h1>{item.title}</h1>
+            <p>{item.sender_name}</p>
           </div>
-        </div>
+        </S.Video>
       );
     });
   } else {
     return (
-      <div className="loading-container">
+      <S.LoadingScreen>
         <img
-          className="loading-screen"
           src="https://media.giphy.com/media/y1ZBcOGOOtlpC/giphy.gif"
           alt="Loading..."
         />
-      </div>
+      </S.LoadingScreen>
     );
   }
 };
