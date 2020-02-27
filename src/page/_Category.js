@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import { getDefaultCategoryAPI, getNextPageCategoryAPI } from "../api/APIUtils";
 import Videos from "../components/videoComponents/Videos";
-import Pagination from "../components/category/CategoryPagintation";
+import Pagination from "../components/paginations/CategoryPagintation";
 
 export default class Category extends Component {
   // kar mide hame chi amaaa safe bandia hanoz doros neshon nemide

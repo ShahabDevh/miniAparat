@@ -3,7 +3,7 @@ import queryString from "query-string";
 
 import { getTagNameAPI } from "../api/APIUtils";
 import Videos from "../components/videoComponents/Videos";
-import Pagination from "../components/searchResult/SearchResultPagination";
+import Pagination from "../components/paginations/SearchResultPagination";
 
 class SearchResult extends Component {
   constructor(props) {
