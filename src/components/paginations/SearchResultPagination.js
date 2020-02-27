@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import * as Style from "./Styled";
+import * as S from "./Styled";
 
 /* current page o ke zori sefresh gozashtam 1 dota safe 1 ijad kard
    to search okeye vali nemitonam jaye digei azash estefade konam mirize beham
@@ -16,7 +16,7 @@ const SearchResultPagination = ({
   query
 }) => {
   return (
-    <Style.Paginate>
+    <S.Paginate>
       {paginate.pagingForward ? (
         <Link
           to={`/search?q=${query}&page=${Number(currentPage) + 1}`}
@@ -44,7 +44,7 @@ const SearchResultPagination = ({
           </li>
         </Link>
       )}
-    </Style.Paginate>
+    </S.Paginate>
   );
 };
 

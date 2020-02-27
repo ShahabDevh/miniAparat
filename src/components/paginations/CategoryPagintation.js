@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import * as Style from "./Styled";
+import * as S from "./Styled";
 
 const CategoryPagination = ({
   paginate,
@@ -12,7 +12,7 @@ const CategoryPagination = ({
   name
 }) => {
   return (
-    <Style.Paginate>
+    <S.Paginate>
       {paginate.pagingForward ? (
         <Link
           to={`/category/${name}/${category_id}`}
@@ -40,7 +40,7 @@ const CategoryPagination = ({
           </li>
         </Link>
       )}
-    </Style.Paginate>
+    </S.Paginate>
   );
 };
 
