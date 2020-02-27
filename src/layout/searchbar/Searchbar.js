@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
 
 import CheckInput from "./CheckInput";
-import * as S from "./styled";
+import * as S from "./Styled";
 
 const SearchBar = ({ history }) => {
   const [inputValue, setInputValue] = useState("");
