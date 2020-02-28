@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import Videos from "../videoComponents/Videos";
 import { getSidebarListAPI } from "../../api/APIUtils";
+import * as S from "./Styled";
 
 const VideoSidebarContainer = props => {
   // componentDidUpdate(){
@@ -30,15 +31,15 @@ const VideoSidebarContainer = props => {
   }
 
   return (
-    <div>
-      <p className="sidebar-title">
+    <S.VideoSidebarWarper>
+      <p>
         ویدیوهای مشابه :<br />
         {props.videoTag.length === 0 ? props.cat_name : props.videoTag[0].name}
       </p>
-      <div className="video-sidebar">
+      <div>
         <Videos videos={data.videobytag} />
       </div>
-    </div>
+    </S.VideoSidebarWarper>
   );
 };
 

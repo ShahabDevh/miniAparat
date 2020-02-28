@@ -1,8 +1,9 @@
 import React from "react";
+import * as S from "./Styled";
 
 const Video = ({ data }) => {
   return (
-    <React.Fragment>
+    <S.Video>
       <iframe
         allowFullScreen={true}
         title="video-frame"
@@ -26,7 +27,7 @@ const Video = ({ data }) => {
       <div className="description">
         <p>{data.description}</p>
       </div>
-    </React.Fragment>
+    </S.Video>
   );
 };
 
