@@ -7,7 +7,7 @@ export const Video = styled.div`
   .tooltip-container {
     position: relative;
 
-    & div {
+    div {
       position: absolute;
       bottom: 16px;
       left: 10px;
@@ -29,17 +29,23 @@ export const Video = styled.div`
   }
 
   .video-info {
-    h1 {
-      font-weight: 300;
-      font-size: 18px;
-      color: #484b62;
-      min-height: 24px;
+    a {
+      text-decoration: none;
+
+      h1 {
+        font-weight: 300;
+        font-size: 18px;
+        color: #484b62;
+        min-height: 24px;
+        cursor: pointer;
+      }
     }
 
     p {
       font-size: 13px;
       padding-top: 8px;
       color: #858898;
+      cursor: pointer;
     }
   }
 `;

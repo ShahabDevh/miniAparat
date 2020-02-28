@@ -18,7 +18,9 @@ const Videos = ({ videos }) => {
             </div>
           </Link>
           <div className="video-info">
-            <h1>{item.title}</h1>
+            <Link to={`/v/${item.uid}`}>
+             <h1>{item.title}</h1>
+            </Link>
             <p>{item.sender_name}</p>
           </div>
         </S.Video>
