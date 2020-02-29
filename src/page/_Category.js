@@ -3,6 +3,9 @@ import React, { Component } from "react";
 import { getDefaultCategoryAPI, getNextPageCategoryAPI } from "../api/APIUtils";
 import Videos from "../components/videoComponents/Videos";
 import Pagination from "../components/paginations/CategoryPagintation";
+import * as S from "./Styled"; // S = Style
+import * as G from "../asset/GlobalStyledComponents" // G = GlobalStyle
+
 
 export default class Category extends Component {
   // kar mide hame chi amaaa safe bandia hanoz doros neshon nemide
@@ -71,18 +74,17 @@ export default class Category extends Component {
     const { loading, data, currentPage, category_id } = this.state;
 
     return (
-      <div className="video-section">
+      <S.VideoSection className="video-section">
         {loading ? (
-          <div className="loading-container">
+          <G.LoadingScreen>
             <img
-              className="loading-screen"
               src="https://media.giphy.com/media/y1ZBcOGOOtlpC/giphy.gif"
               alt="Loading..."
             />
-          </div>
+          </G.LoadingScreen>
         ) : (
           <React.Fragment>
-            <h2 className="video-title">{this.props.match.params.name}</h2>
+            <h2>{this.props.match.params.name}</h2>
             <div className="videos">
               <Videos videos={this.state.data.categoryvideos} />
             </div>
@@ -96,7 +98,7 @@ export default class Category extends Component {
             />
           </React.Fragment>
         )}
-      </div>
+      </S.VideoSection>
     );
   }
 }

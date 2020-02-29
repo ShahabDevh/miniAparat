@@ -3,6 +3,9 @@ import React, { Component } from "react";
 import { getVideoHashAPI } from "../api/APIUtils";
 import VideoSidebar from "../components/videoPage/VideoSidebarContainer";
 import Video from "../components/videoPage/Video";
+import * as S from "./Styled"; // S = Style
+import * as G from "../asset/GlobalStyledComponents" // G = GlobalStyle
+
 
 export default class VideoContainer extends Component {
   constructor(props) {
@@ -40,26 +43,25 @@ export default class VideoContainer extends Component {
 
     if (data.length === undefined) {
       return (
-        <div className="video-section">
-          <div className="video-row-flex">
-            <div className="video-col-r">
+        <S.VideoSection className="video-section">
+          <div className="video-row">
+            <div className="col-r">
               <Video data={data} />
             </div>
-            <div className="video-col-l">
+            <div className="col-l">
               <VideoSidebar videoTag={data.tags} cat_name={data.cat_name} />
             </div>
           </div>
-        </div>
+        </S.VideoSection>
       );
     } else {
       return (
-        <div className="loading-container">
+        <G.LoadingScreen>
           <img
-            className="loading-screen"
             src="https://media.giphy.com/media/y1ZBcOGOOtlpC/giphy.gif"
             alt="Loading..."
           />
-        </div>
+        </G.LoadingScreen>
       );
     }
   }

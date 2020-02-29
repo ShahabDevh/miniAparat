@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import { getVideoTagAPI } from "../api/APIUtils";
 import Videos from "../components/videoComponents/Videos";
+import * as S from "./Styled"; // S = Style
 
 const VideoSection = () => {
   const [data, setData] = useState([]);
@@ -21,12 +22,12 @@ const VideoSection = () => {
   }
 
   return (
-    <div className="video-section">
-      <h2 className="video-title">ویدیوهای محبوب</h2>
+    <S.VideoSection className="video-section">
+      <h2>ویدیوهای محبوب</h2>
       <div className="videos">
         <Videos videos={data.videobytag} />
       </div>
-    </div>
+    </S.VideoSection>
   );
 };
 

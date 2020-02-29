@@ -4,6 +4,9 @@ import queryString from "query-string";
 import { getTagNameAPI } from "../api/APIUtils";
 import Videos from "../components/videoComponents/Videos";
 import Pagination from "../components/paginations/SearchResultPagination";
+import * as S from "./Styled"; // S = Style
+import * as G from "../asset/GlobalStyledComponents" // G = GlobalStyle
+
 
 class SearchResult extends Component {
   constructor(props) {
@@ -58,30 +61,29 @@ class SearchResult extends Component {
 
     if (loading) {
       return (
-        <div className="loading-container">
+        <G.LoadingScreen>
           <img
-            className="loading-screen"
             src="https://media.giphy.com/media/y1ZBcOGOOtlpC/giphy.gif"
             alt="Loading..."
           />
-        </div>
+        </G.LoadingScreen>
       );
     } else if (query.q === undefined) {
       return (
-        <div className="video-section">
-          <h1>Search for something</h1>
-        </div>
+        <S.VideoSection className="video-section">
+          <h2>Search for something</h2>
+        </S.VideoSection>
       );
     } else if (data.videobysearch === null) {
       return (
-        <div className="video-section">
-          <h1>nothing has been found</h1>
-        </div>
+        <S.VideoSection className="video-section">
+          <h2>nothing has been found</h2>
+        </S.VideoSection>
       );
     } else {
       return (
-        <div className="video-section">
-          <h2 className="video-title">نتیحه جست و جو : {query.q}</h2>
+        <S.VideoSection className="video-section">
+          <h2>نتیحه جست و جو : {query.q}</h2>
           <div className="videos">
             <Videos videos={data.videobysearch} />
           </div>
@@ -92,7 +94,7 @@ class SearchResult extends Component {
             increment={() => this.handleIncrease()}
             decrement={() => this.handleDecrease()}
           />
-        </div>
+        </S.VideoSection>
       );
     }
   }
