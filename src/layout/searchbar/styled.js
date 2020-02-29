@@ -12,12 +12,12 @@ export const InputWrapper = styled.div`
   border: 2px solid #fff;
   transition: background 0.4s ease-in-out;
 
-  :hover {
+  &:hover {
     border: 2px solid #e5e5e5;
     background: #fff;
   }
 
-  :focus {
+  &:focus {
     border: 2px solid #e5e5e5;
     background: #fff;
   }
@@ -44,17 +44,4 @@ export const SubmitButton = styled.button`
   background: transparent;
   margin-top: 6px;
   outline: none;
-`;
-
-export const Icon = styled.i`
-  font-size: ${props => (props.className.match(/search/g) ? "18px" : "22px")};
-  color: #5d5d5d;
-  cursor: pointer;
-
-  ${props =>
-    props.className.match(/home/g)
-      ? ""
-      : `:hover {
-    color: #4dbced;
-  }`}
 `;

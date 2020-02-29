@@ -2,7 +2,8 @@ import React from "react";
 
 import SearchBar from "./searchbar/Searchbar";
 import DashboardContainer from "./dashboard/DashboardContainer";
-import * as S from "./Styled";
+import * as S from "./Styled"; // S = Style
+import * as G from "../asset/GlobalStyledComponents" // G = GlobalStyle
 
 const Navbar = () => {
   const handleClick = () => {
@@ -21,7 +22,7 @@ const Navbar = () => {
   return (
     <S.Navigation>
       <S.NavigationBurgerBar>
-        <S.Icon onClick={handleClick} className="fas fa-bars" />
+        <G.Icon onClick={handleClick} className="fas fa-bars" />
         <DashboardContainer />
       </S.NavigationBurgerBar>
       <SearchBar />

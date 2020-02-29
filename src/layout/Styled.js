@@ -14,16 +14,3 @@ export const Navigation = styled.nav`
 export const NavigationBurgerBar = styled.div`
   margin: 12px 12px 0 0;
 `;
-
-export const Icon = styled.i`
-  font-size: ${props => (props.className.match(/search/g) ? "18px" : "22px")};
-  color: #5d5d5d;
-  cursor: pointer;
-
-  ${props =>
-    props.className.match(/home/g)
-      ? ""
-      : `:hover {
-    color: #4dbced;
-  }`}
-`;
