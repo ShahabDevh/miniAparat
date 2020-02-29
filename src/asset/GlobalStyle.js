@@ -1,14 +1,19 @@
 import { createGlobalStyle } from "styled-components";
 
+
 export const GlobalStyle = createGlobalStyle`
 @font-face {
   font-family: "IRANSans";
-  src: url("./font/IRANSans_0.ttf?family=IRANSans");
+  src: url("../../public/font/IRANSans_0.ttf?family=IRANSans");
 }
  
 body {  
   direction: rtl; 
   font-family: "IRANSans";
+
+  iframe {
+    border: none;
+  }
 }
 
 * {
