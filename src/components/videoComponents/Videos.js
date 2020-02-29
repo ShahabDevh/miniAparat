@@ -8,7 +8,7 @@ const Videos = ({ videos }) => {
   if (videos) {
     return videos.map(item => {
       return (
-        <S.Video key={item.id} bg={item.small_poster}>
+        <S.Videos key={item.id} bg={item.small_poster}>
           <Link to={`/v/${item.uid}`}>
             <div className="tooltip-container">
               <div>
@@ -23,7 +23,7 @@ const Videos = ({ videos }) => {
             </Link>
             <p>{item.sender_name}</p>
           </div>
-        </S.Video>
+        </S.Videos>
       );
     });
   } else {

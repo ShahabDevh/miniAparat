@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Videos } from "../videoComponents/Styled";
 
 export const VideoSidebarWarper = styled.div`
   & > p {
@@ -12,12 +13,19 @@ export const VideoSidebarWarper = styled.div`
     overflow: hidden scroll;
   }
 
-  .sc-fzozJi {
+  ${Videos} {
     display: flex;
     width: 100%;
 
     video {
       width: 160px;
+    }
+
+    .video-info {
+      padding: 0 8px;
+      
+      h1 {
+      font-size: 15px;
     }
   }
 `;
@@ -32,9 +40,9 @@ export const Video = styled.div`
     display: flex;
     justify-content: space-between;
 
-    & span {
+    i span {
       margin-left: 4px;
-      font-weight: 400;
+      font-weight: 300;
     }
 
     & h1 {
@@ -47,6 +55,13 @@ export const Video = styled.div`
     display: flex;
     padding-bottom: 10px;
     border-bottom: 1px solid #e5e5e5;
+
+    img {
+      width: 36px;
+      height: auto;
+      border-radius: 100%;
+      border: 1px solid #858898;
+    }
 
     .user-info {
       padding-right: 8px;

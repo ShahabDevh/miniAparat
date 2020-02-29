@@ -1,8 +1,13 @@
 import styled from "styled-components";
 
-export const Video = styled.div`
+export const Videos = styled.div`
   margin: 8px;
-  width: 23.7%;
+  width: 23.5%;
+
+  @media screen and (max-width: 1024px) {
+    max-width: 22.5%;
+    width: 21.5%;
+  }
 
   .tooltip-container {
     position: relative;
@@ -46,6 +51,17 @@ export const Video = styled.div`
       padding-top: 8px;
       color: #858898;
       cursor: pointer;
+    }
+
+    @media screen and (max-width: 1024px) {
+      a {
+        h1 {
+          font-size: 1.8em;
+        }
+      }
+      p {
+        font-size: 1.7em;
+      }
     }
   }
 `;
